@@ -1,0 +1,18 @@
+{
+  "name": "cosmetic_webapp",
+  "version": "1.0.0",
+  "description": "A web application for a cosmetic site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-tailwindcss": "npx tailwindcss -i ./src/input-style.css -o ./public/css/output-style.css --watch"
+  },
+  "author": "SidCorp",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "lightgallery": "^2.6.1"
+  }
+}
