@@ -4,11 +4,12 @@
   "description": "A web application for a cosmetic site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d public",
     "watch-tailwindcss": "npx tailwindcss -i ./src/input-style.css -o ./public/css/output-style.css --watch"
   },
   "author": "SidCorp",
   "license": "ISC",
+  "homepage": "https://Dominic2000code.github.io/turbo-funicular",
   "devDependencies": {
     "tailwindcss": "^3.1.8"
   },
