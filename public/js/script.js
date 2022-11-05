@@ -62,11 +62,13 @@ const setCategories = () => {
   const finalCategories = ["All", ...uniqueCategories];
   //   console.log(finalCategories);
 
-  categoriesContainer.innerHTML = finalCategories.map(
-    (category) => `
+  categoriesContainer.innerHTML = finalCategories
+    .map(
+      (category) => `
         <option>${category}</option>
     `
-  );
+    )
+    .join("");
   categoriesContainer.addEventListener("change", (event) => {
     const selectedCategory = event.target.value;
     selectedCategory === "All"
