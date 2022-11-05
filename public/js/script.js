@@ -3,7 +3,7 @@ import { data } from "./data.js";
 const categoriesContainer = document.querySelector(".categories");
 const productsContainer = document.querySelector(".products");
 const searchInput = document.querySelector(".search");
-console.log(searchInput);
+// console.log(searchInput);
 
 const displayProducts = (filteredProducts) => {
   productsContainer.innerHTML = filteredProducts
@@ -56,6 +56,25 @@ searchInput.addEventListener("keyup", (event) => {
   }
 });
 
-// list.addEventListener("change", (event) => {
-//   console.log(event.target.value);
-// });
+const setCategories = () => {
+  const allCategories = data.map((item) => item.category);
+  const uniqueCategories = new Set(allCategories);
+  const finalCategories = ["All", ...uniqueCategories];
+  //   console.log(finalCategories);
+
+  categoriesContainer.innerHTML = finalCategories.map(
+    (category) => `
+        <option>${category}</option>
+    `
+  );
+  categoriesContainer.addEventListener("change", (event) => {
+    const selectedCategory = event.target.value;
+    selectedCategory === "All"
+      ? displayProducts(data)
+      : displayProducts(
+          data.filter((item) => item.category === selectedCategory)
+        );
+  });
+};
+
+setCategories();
