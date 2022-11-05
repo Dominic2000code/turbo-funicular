@@ -12,6 +12,7 @@ const displayProducts = (filteredProducts) => {
     <div class="lg:w-1/3 sm:w-1/2 p-4">
                 <div class="flex relative">
                   <img
+                    loading="lazy"
                     alt="gallery"
                     class="absolute inset-0 w-full h-full object-cover object-center"
                     src=${product.img}
